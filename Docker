@@ -1,15 +1,2 @@
-pipeline {
-    agent {
-        docker {
-            image 'maven:3.9.6-openjdk-17-alpine'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
-    stages {
-        stage('build') {
-            steps {
-                sh 'mvn --version'
-            }
-        }
-    }
-}
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html
