@@ -1,3 +1,15 @@
-FROM ubuntu:latest
-RUN apt-get update && apt-get install -y nginx
-CMD ["nginx", "-g", "daemon off;"]
+pipeline {
+    agent {
+        docker {
+            image 'maven:3.9.6-openjdk-17-alpine'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
+    }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+    }
+}
