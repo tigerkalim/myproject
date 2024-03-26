@@ -35,8 +35,25 @@
     <section class="advertisement">
         <h2>Book Now!</h2>
         <p>Contact us today to book our catering services for your next event. Let us take care of the food while you enjoy your special day!</p>
-        <!-- Button to trigger the bookNow function -->
-        <button onclick="bookNow()">Book Now</button>
+        
+        <!-- Booking form -->
+        <form action="booking.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+            <label for="event_date">Event Date:</label>
+            <input type="date" id="event_date" name="event_date" required>
+            <label for="event_time">Event Time:</label>
+            <input type="time" id="event_time" name="event_time" required>
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" required>
+            <label for="special_requests">Special Requests:</label>
+            <textarea id="special_requests" name="special_requests" rows="4"></textarea>
+            <input type="submit" value="Submit Booking">
+        </form>
     </section>
     <footer>
         &copy; 2024 Nawaz Kitchen and Caterers. All rights reserved.
